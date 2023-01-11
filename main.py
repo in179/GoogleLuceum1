@@ -18,7 +18,6 @@ class MyWidget(QMainWindow):
             qp = QPainter()
             # Начинаем процесс рисования
             qp.begin(self)
-            qp.setBrush(QColor(255, 204, 0))
             self.draw_circles(qp)
             # Завершаем рисование
             qp.end()
@@ -30,6 +29,7 @@ class MyWidget(QMainWindow):
 
     def draw_circles(self, painter):
         for i in range(2):
+            qp.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
             r = random.randint(0, 300)
             painter.drawEllipse(random.randint(r, 450) - r, random.randint(r, 300) - r, r, r)
 
