@@ -5,7 +5,8 @@ from PyQt5.QtCore import Qt
 import random
 import sys
 
-class MyWidget(QMainWindow):
+
+class DrawBeautifulCircles(QMainWindow):
     def __init__(self):
         super().__init__()
         self.do_paint = False
@@ -28,14 +29,14 @@ class MyWidget(QMainWindow):
         self.do_paint = False
 
     def draw_circles(self, painter):
-        for i in range(2):
-            qp.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
+        for i in range(3):
+            painter.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
             r = random.randint(0, 300)
             painter.drawEllipse(random.randint(r, 450) - r, random.randint(r, 300) - r, r, r)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = DrawBeautifulCircles()
     ex.show()
     sys.exit(app.exec_())
