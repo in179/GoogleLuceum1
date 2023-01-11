@@ -26,6 +26,7 @@ class MyWidget(QMainWindow):
     def paint(self):
         self.do_paint = True
         self.repaint()
+        self.do_paint = False
 
     def draw_circles(self, painter):
         for i in range(2):
